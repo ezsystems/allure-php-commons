@@ -1,5 +1,5 @@
 {
-    "name": "allure-framework/allure-php-api",
+    "name": "ezsystems/allure-php-api",
     "keywords":["php", "report", "allure", "api"],
     "description": "PHP API for Allure adapter",
     "homepage": "http://allure.qatools.ru/",
@@ -9,6 +9,10 @@
             "name": "Ivan Krutov",
             "email": "vania-pooh@yandex-team.ru",
             "role": "Developer"
+        },
+        {
+            "name": "eZ qa-team modifications",
+            "homepage": "https://github.com/ezsystems/allure-php-commons/graphs/contributors"
         }
     ],
     "support": {
