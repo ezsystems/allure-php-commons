@@ -7,7 +7,7 @@ In order to use this API you simply need to add the following to **composer.json
 {
     "require": {
         "php": "^5.4.0 || ^7.1.3",
-        "ezsystems/allure-php-api": "~2.0.0"
+        "ezsystems/allure-php-api": "~3.0.0"
     }
 }
 ```
