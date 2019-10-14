@@ -1,13 +1,13 @@
 # Allure PHP API
-This repository contains PHP API for Allure framework. The main idea is to reuse this API when creating adapters for different test frameworks.
+This repository contains PHP API for Allure framework with eZ Systems modifications for newer JMS Serializer. The main idea is to reuse this API when creating adapters for different test frameworks.
 
 ## Getting started
 In order to use this API you simply need to add the following to **composer.json**:
 ```json
 {
     "require": {
-        "php": ">=5.4.0",
-        "allure-framework/allure-php-api": "~1.0.0"
+        "php": "^5.4.0 || ^7.1.3",
+        "ezsystems/allure-php-api": "~2.0.0"
     }
 }
 ```
