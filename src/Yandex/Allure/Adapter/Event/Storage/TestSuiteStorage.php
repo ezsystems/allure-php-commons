@@ -18,6 +18,7 @@ class TestSuiteStorage
 
     /**
      * @param string $uuid
+     *
      * @return TestSuite
      */
     public function get($uuid)
@@ -48,6 +49,6 @@ class TestSuiteStorage
 
     public function size()
     {
-        return sizeof($this->storage);
+        return count($this->storage);
     }
 }

@@ -8,12 +8,10 @@ use JMS\Serializer\Annotation\XmlRoot;
 use JMS\Serializer\Annotation\XmlValue;
 
 /**
- * @package Yandex\Allure\Adapter\Model
  * @XmlRoot("description")
  */
 class Description implements Entity
 {
-
     /**
      * @Type("string")
      * @XmlAttribute

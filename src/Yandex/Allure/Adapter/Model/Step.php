@@ -9,7 +9,6 @@ use JMS\Serializer\Annotation\XmlElement;
 
 class Step implements Entity
 {
-
     /**
      * @var int
      * @Type("integer")

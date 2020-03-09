@@ -72,6 +72,7 @@ class TestCaseStartedEvent implements TestCaseEvent
 
     /**
      * @param string $title
+     *
      * @return $this
      */
     public function withTitle($title)
@@ -83,6 +84,7 @@ class TestCaseStartedEvent implements TestCaseEvent
 
     /**
      * @param Description $description
+     *
      * @return $this
      */
     public function withDescription(Description $description)
@@ -94,6 +96,7 @@ class TestCaseStartedEvent implements TestCaseEvent
 
     /**
      * @param array $labels
+     *
      * @return $this
      */
     public function withLabels(array $labels)
@@ -105,6 +108,7 @@ class TestCaseStartedEvent implements TestCaseEvent
 
     /**
      * @param array $parameters
+     *
      * @return $this
      */
     public function withParameters(array $parameters)

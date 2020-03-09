@@ -3,8 +3,7 @@
 namespace Yandex\Allure\Adapter\Model;
 
 /**
- * Description type
- * @package Yandex\Allure\Adapter\Model
+ * Description type.
  */
 final class DescriptionType
 {

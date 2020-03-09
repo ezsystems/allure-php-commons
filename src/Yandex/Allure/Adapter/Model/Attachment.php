@@ -5,12 +5,8 @@ namespace Yandex\Allure\Adapter\Model;
 use JMS\Serializer\Annotation\Type;
 use JMS\Serializer\Annotation\XmlAttribute;
 
-/**
- * @package Yandex\Allure\Adapter\Model
- */
 class Attachment implements Entity
 {
-
     /**
      * @var string
      * @Type("string")

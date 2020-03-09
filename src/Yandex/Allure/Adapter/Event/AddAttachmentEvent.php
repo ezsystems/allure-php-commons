@@ -9,7 +9,6 @@ use Yandex\Allure\Adapter\Model\Attachment;
 use Yandex\Allure\Adapter\Model\Entity;
 use Yandex\Allure\Adapter\Model\Provider;
 use Yandex\Allure\Adapter\Model\Step;
-use Yandex\Allure\Adapter\Support\Utils;
 
 const DEFAULT_FILE_EXTENSION = 'txt';
 const DEFAULT_MIME_TYPE = 'text/plain';
@@ -44,16 +43,16 @@ class AddAttachmentEvent implements StepEvent
         if (!@file_exists($filePath) || !@is_file($filePath)) {
             //Save contents to temporary file
             $filePath = tempnam(sys_get_temp_dir(), 'allure-attachment');
-            if (!file_put_contents($filePath, $filePathOrContents)){
+            if (!file_put_contents($filePath, $filePathOrContents)) {
                 throw new AllureException("Failed to save attachment contents to $filePath");
             }
         }
-        
-        if (!isset($type)){
+
+        if (!isset($type)) {
             $type = $this->guessFileMimeType($filePath);
             $this->type = $type;
         }
-        
+
         $fileExtension = $this->guessFileExtension($type);
 
         $fileSha1 = sha1_file($filePath);
@@ -64,25 +63,27 @@ class AddAttachmentEvent implements StepEvent
 
         return $this->getOutputFileName($fileSha1, $fileExtension);
     }
-    
+
     private function guessFileMimeType($filePath)
     {
         $type = MimeTypeGuesser::getInstance()->guess($filePath);
-        if (!isset($type)){
+        if (!isset($type)) {
             return DEFAULT_MIME_TYPE;
         }
+
         return $type;
     }
-    
+
     private function guessFileExtension($mimeType)
     {
         $candidate = ExtensionGuesser::getInstance()->guess($mimeType);
-        if (!isset($candidate)){
+        if (!isset($candidate)) {
             return DEFAULT_FILE_EXTENSION;
         }
+
         return $candidate;
     }
-    
+
     public function getOutputFileName($sha1, $extension)
     {
         return $sha1 . '-attachment.' . $extension;
@@ -90,7 +91,7 @@ class AddAttachmentEvent implements StepEvent
 
     public function getOutputPath($sha1, $extension)
     {
-        return Provider::getOutputDirectory() . DIRECTORY_SEPARATOR . $this->getOutputFileName($sha1, $extension);
+        return Provider::getOutputDirectory() . \DIRECTORY_SEPARATOR . $this->getOutputFileName($sha1, $extension);
     }
 
     /**
