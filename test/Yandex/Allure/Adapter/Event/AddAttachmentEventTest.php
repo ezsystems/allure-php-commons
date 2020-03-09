@@ -61,6 +61,18 @@ class AddAttachmentEventTest extends TestCase
         );
     }
 
+    /**
+     * @dataProvider emptyContentProvider
+     */
+    public function testEmptyAttachmentIsNotParsed($emptyContent)
+    {
+        $event = new AddAttachmentEvent($emptyContent, self::ATTACHMENT_CAPTION);
+        $step = new Step();
+        $event->process($step);
+
+        $this->assertEmpty($step->getAttachments());
+    }
+
     private function checkAttachmentIsCorrect(
         Step $step,
         $attachmentOutputPath,
@@ -81,5 +93,13 @@ class AddAttachmentEventTest extends TestCase
     private function getTestContents()
     {
         return str_shuffle('test-contents');
+    }
+
+    public function emptyContentProvider()
+    {
+        return [
+            [''],
+            [null],
+        ];
     }
 }
