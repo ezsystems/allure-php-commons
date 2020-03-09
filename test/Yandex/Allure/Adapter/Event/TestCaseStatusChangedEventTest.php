@@ -4,8 +4,10 @@ namespace Yandex\Allure\Adapter\Event;
 
 use Exception;
 use Yandex\Allure\Adapter\Model\TestCase;
+use PHPUnit\Framework\TestCase as PHPUnitTestCase;
 
-abstract class TestCaseStatusChangedEventTest extends \PHPUnit_Framework_TestCase
+
+abstract class TestCaseStatusChangedEventTest extends PHPUnitTestCase
 {
     /**
      * @return string

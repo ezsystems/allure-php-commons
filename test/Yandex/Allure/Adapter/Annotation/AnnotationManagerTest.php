@@ -9,8 +9,9 @@ use Yandex\Allure\Adapter\Model\ParameterKind;
 use Yandex\Allure\Adapter\Model\SeverityLevel;
 use Yandex\Allure\Adapter\Model\Label;
 use Yandex\Allure\Adapter\Model\LabelType;
+use PHPUnit\Framework\TestCase;
 
-class AnnotationManagerTest extends \PHPUnit_Framework_TestCase
+class AnnotationManagerTest extends TestCase
 {
     public function testUpdateTestSuiteStartedEvent()
     {
