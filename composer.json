@@ -32,5 +32,10 @@
         "psr-0": {
             "Yandex": ["src/", "test/"]
         }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "3.1.x-dev"
+        }
     }
 }
