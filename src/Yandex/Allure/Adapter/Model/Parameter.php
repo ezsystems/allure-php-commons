@@ -7,7 +7,6 @@ use JMS\Serializer\Annotation\XmlAttribute;
 
 class Parameter implements Entity
 {
-
     /**
      * @var string
      * @Type("string")

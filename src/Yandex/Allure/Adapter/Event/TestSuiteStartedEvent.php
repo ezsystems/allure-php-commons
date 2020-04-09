@@ -60,6 +60,7 @@ class TestSuiteStartedEvent implements TestSuiteEvent
 
     /**
      * @param string $title
+     *
      * @return $this
      */
     public function withTitle($title)
@@ -71,6 +72,7 @@ class TestSuiteStartedEvent implements TestSuiteEvent
 
     /**
      * @param Description $description
+     *
      * @return $this
      */
     public function withDescription(Description $description)
@@ -82,6 +84,7 @@ class TestSuiteStartedEvent implements TestSuiteEvent
 
     /**
      * @param array $labels
+     *
      * @return $this
      */
     public function withLabels(array $labels)

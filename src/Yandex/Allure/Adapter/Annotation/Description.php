@@ -8,7 +8,6 @@ use Yandex\Allure\Adapter\Model\DescriptionType;
 /**
  * @Annotation
  * @Target({"CLASS", "METHOD"})
- * @package Yandex\Allure\Adapter\Annotation
  */
 class Description
 {

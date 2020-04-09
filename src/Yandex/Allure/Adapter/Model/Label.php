@@ -7,12 +7,10 @@ use JMS\Serializer\Annotation\XmlAttribute;
 use JMS\Serializer\Annotation\XmlRoot;
 
 /**
- * @package Yandex\Allure\Adapter\Model
  * @XmlRoot("label")
  */
 class Label implements Entity
 {
-
     /**
      * @var string
      * @Type("string")
@@ -51,6 +49,7 @@ class Label implements Entity
 
     /**
      * @param $featureName
+     *
      * @return Label
      */
     public static function feature($featureName)
@@ -60,6 +59,7 @@ class Label implements Entity
 
     /**
      * @param $storyName
+     *
      * @return Label
      */
     public static function story($storyName)
@@ -69,6 +69,7 @@ class Label implements Entity
 
     /**
      * @param $severityLevel
+     *
      * @return Label
      */
     public static function severity($severityLevel)
@@ -78,6 +79,7 @@ class Label implements Entity
 
     /**
      * @param $testType
+     *
      * @return Label
      */
     public static function testType($testType)
@@ -87,6 +89,7 @@ class Label implements Entity
 
     /**
      * @param $issueKey
+     *
      * @return Label
      */
     public static function issue($issueKey)
@@ -103,5 +106,4 @@ class Label implements Entity
     {
         return new Label(LabelType::TEST_ID, $testCaseId);
     }
-
 }

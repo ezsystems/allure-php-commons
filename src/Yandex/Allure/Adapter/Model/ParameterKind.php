@@ -3,8 +3,7 @@
 namespace Yandex\Allure\Adapter\Model;
 
 /**
- * Parameter kind
- * @package Yandex\Allure\Adapter\Model
+ * Parameter kind.
  */
 final class ParameterKind
 {
