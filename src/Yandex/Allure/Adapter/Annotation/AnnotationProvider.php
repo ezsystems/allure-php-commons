@@ -6,7 +6,6 @@
 namespace Yandex\Allure\Adapter\Annotation;
 
 use Doctrine\Common\Annotations\AnnotationReader;
-use Doctrine\Common\Annotations\AnnotationRegistry;
 use Doctrine\Common\Annotations\IndexedReader;
 
 class AnnotationProvider
@@ -56,7 +55,6 @@ class AnnotationProvider
     private static function getIndexedReader()
     {
         if (!isset(self::$indexedReader)) {
-            self::registerAnnotationNamespaces();
             self::$indexedReader = new IndexedReader(self::getAnnotationReader());
         }
 
@@ -69,38 +67,10 @@ class AnnotationProvider
     private static function getAnnotationReader()
     {
         if (!isset(self::$annotationReader)) {
-            self::registerAnnotationNamespaces();
             self::$annotationReader = new AnnotationReader();
         }
 
         return self::$annotationReader;
-    }
-
-    public static function registerAnnotationNamespaces()
-    {
-        AnnotationRegistry::registerFile(__DIR__ . "/../../../../../../../../vendor/jms/serializer/src/Annotation/Exclude.php");
-        AnnotationRegistry::registerFile(__DIR__ . "/../../../../../../../../vendor/jms/serializer/src/Annotation/ExclusionPolicy.php");
-        AnnotationRegistry::registerFile(__DIR__ . "/../../../../../../../../vendor/jms/serializer/src/Annotation/SerializedName.php");
-        AnnotationRegistry::registerFile(__DIR__ . "/../../../../../../../../vendor/jms/serializer/src/Annotation/Type.php");
-        AnnotationRegistry::registerFile(__DIR__ . "/../../../../../../../../vendor/jms/serializer/src/Annotation/XmlAttribute.php");
-        AnnotationRegistry::registerFile(__DIR__ . "/../../../../../../../../vendor/jms/serializer/src/Annotation/XmlElement.php");
-        AnnotationRegistry::registerFile(__DIR__ . "/../../../../../../../../vendor/jms/serializer/src/Annotation/XmlList.php");
-        AnnotationRegistry::registerFile(__DIR__ . "/../../../../../../../../vendor/jms/serializer/src/Annotation/XmlNamespace.php");
-        AnnotationRegistry::registerFile(__DIR__ . "/../../../../../../../../vendor/jms/serializer/src/Annotation/XmlValue.php");
-        AnnotationRegistry::registerFile(__DIR__ . "/../../../../../../../../vendor/jms/serializer/src/Annotation/XmlRoot.php");
-
-        AnnotationRegistry::registerAutoloadNamespace(
-            'JMS\Serializer\Annotation',
-            [
-                __DIR__ . '/../../../../../../../../vendor/jms/serializer/src',
-                __DIR__ . '/../../../../vendor/jms/serializer/src',
-            ]
-        );
-
-        AnnotationRegistry::registerAutoloadNamespace(
-            'Yandex\Allure\Adapter\Annotation',
-            __DIR__ . '/../../../../../src'
-        );
     }
 
     /**

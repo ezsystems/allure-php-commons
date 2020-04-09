@@ -2,8 +2,7 @@
 
 namespace Yandex\Allure\Adapter\Event;
 
-use Symfony\Component\HttpFoundation\File\MimeType\ExtensionGuesser;
-use Symfony\Component\HttpFoundation\File\MimeType\MimeTypeGuesser;
+use Symfony\Component\Mime\MimeTypes;
 use Yandex\Allure\Adapter\AllureException;
 use Yandex\Allure\Adapter\Model\Attachment;
 use Yandex\Allure\Adapter\Model\Entity;
@@ -66,7 +65,7 @@ class AddAttachmentEvent implements StepEvent
 
     private function guessFileMimeType($filePath)
     {
-        $type = MimeTypeGuesser::getInstance()->guess($filePath);
+        $type = MimeTypes::getDefault()->guessMimeType($filePath);
         if (!isset($type)) {
             return DEFAULT_MIME_TYPE;
         }
@@ -76,7 +75,7 @@ class AddAttachmentEvent implements StepEvent
 
     private function guessFileExtension($mimeType)
     {
-        $candidate = ExtensionGuesser::getInstance()->guess($mimeType);
+        $candidate = current(MimeTypes::getDefault()->getExtensions($mimeType));
         if (!isset($candidate)) {
             return DEFAULT_FILE_EXTENSION;
         }
