@@ -4,10 +4,11 @@ namespace Yandex\Allure\Adapter\Event;
 
 use Yandex\Allure\Adapter\Model\Attachment;
 use Yandex\Allure\Adapter\Model\Step;
+use PHPUnit\Framework\TestCase as PHPUnitTestCase;
 
 const ATTACHMENT_TYPE = 'text/plain';
 
-class RemoveAttachmentsEventTest extends \PHPUnit_Framework_TestCase
+class RemoveAttachmentsEventTest extends PHPUnitTestCase
 {
     public function testLifecycle()
     {

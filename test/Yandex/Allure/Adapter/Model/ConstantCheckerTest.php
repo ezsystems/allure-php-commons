@@ -4,8 +4,9 @@ namespace Yandex\Allure\Adapter\Model;
 
 use Yandex\Allure\Adapter\AllureException;
 use Yandex\Allure\Adapter\Model\Fixtures\TestConstants;
+use PHPUnit\Framework\TestCase;
 
-class ConstantCheckerTest extends \PHPUnit_Framework_TestCase
+class ConstantCheckerTest extends TestCase
 {
     const CLASS_NAME = 'Yandex\Allure\Adapter\Model\Fixtures\TestConstants';
 

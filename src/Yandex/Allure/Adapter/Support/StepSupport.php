@@ -14,20 +14,21 @@ const STEP_TITLE_KEY = 'title';
 const STEP_CHILD_STEPS_KEY = 'childSteps';
 
 /**
- * Use this trait in order to add Allure steps support
- * @package Yandex\Allure\Adapter\Support
+ * Use this trait in order to add Allure steps support.
  */
 trait StepSupport
 {
-
     use Utils;
 
     /**
-     * Adds a simple step to current test case
+     * Adds a simple step to current test case.
+     *
      * @param string $name step name
      * @param callable $logic anonymous function containing the entire step logic.
      * @param string $title an optional title for the step
+     *
      * @return mixed
+     *
      * @throws \Yandex\Allure\Adapter\AllureException
      * @throws \Exception
      */

@@ -6,7 +6,6 @@ use Ramsey\Uuid\Uuid;
 
 trait Utils
 {
-
     /**
      * @return float
      */

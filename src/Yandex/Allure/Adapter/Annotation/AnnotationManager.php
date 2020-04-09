@@ -2,7 +2,6 @@
 
 namespace Yandex\Allure\Adapter\Annotation;
 
-use Doctrine\Common\Annotations\Annotation;
 use Yandex\Allure\Adapter\Event\TestCaseStartedEvent;
 use Yandex\Allure\Adapter\Event\TestSuiteStartedEvent;
 use Yandex\Allure\Adapter\Model;
@@ -89,7 +88,6 @@ class AnnotationManager
 
     public function updateTestSuiteEvent(TestSuiteStartedEvent $event)
     {
-
         if ($this->isTitlePresent()) {
             $event->setTitle($this->getTitle());
         }
@@ -101,7 +99,6 @@ class AnnotationManager
         if ($this->areLabelsPresent()) {
             $event->setLabels($this->getLabels());
         }
-
     }
 
     public function updateTestCaseEvent(TestCaseStartedEvent $event)
@@ -121,7 +118,6 @@ class AnnotationManager
         if ($this->areParametersPresent()) {
             $event->setParameters($this->getParameters());
         }
-
     }
 
     /**

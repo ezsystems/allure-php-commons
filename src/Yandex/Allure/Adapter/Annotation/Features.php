@@ -7,7 +7,6 @@ use Doctrine\Common\Annotations\Annotation\Required;
 /**
  * @Annotation
  * @Target({"CLASS", "METHOD"})
- * @package Yandex\Allure\Adapter\Annotation
  */
 class Features
 {

@@ -15,14 +15,12 @@ use JMS\Serializer\Annotation\XmlNamespace;
 use JMS\Serializer\Annotation\XmlRoot;
 
 /**
- * @package Yandex\Allure\Adapter\Model
  * @XmlNamespace(uri="urn:model.allure.qatools.yandex.ru", prefix="alr")
  * @XmlRoot(name="alr:test-suite")
  * @ExclusionPolicy("none")
  */
 class TestSuite implements \Serializable, Entity
 {
-
     const DEFAULT_VERSION = '1.4.0';
 
     /**
@@ -214,8 +212,10 @@ class TestSuite implements \Serializable, Entity
     }
 
     /**
-     * Returns test case by name
+     * Returns test case by name.
+     *
      * @param string $name
+     *
      * @return \Yandex\Allure\Adapter\Model\TestCase
      */
     public function getTestCase($name)
@@ -224,7 +224,8 @@ class TestSuite implements \Serializable, Entity
     }
 
     /**
-     * Return total count of child elements (test cases or test suites)
+     * Return total count of child elements (test cases or test suites).
+     *
      * @return int
      */
     public function size()
@@ -250,6 +251,7 @@ class TestSuite implements \Serializable, Entity
 
     /**
      * @param string $serialized
+     *
      * @return mixed
      */
     public function unserialize($serialized)

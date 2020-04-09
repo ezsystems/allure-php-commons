@@ -19,6 +19,8 @@ use Yandex\Allure\Adapter\Model\Label;
 use Yandex\Allure\Adapter\Model\Parameter;
 use Yandex\Allure\Adapter\Model\ParameterKind;
 use Yandex\Allure\Adapter\Model\SeverityLevel;
+use PHPUnit\Framework\TestCase;
+
 
 const TEST_CASE_NAME = 'test-case-name';
 const TEST_CASE_TITLE = 'test-case-title';
@@ -36,7 +38,7 @@ const STEP_TITLE = 'test-step-title';
 const STEP_ATTACHMENT_TITLE = 'step-attachment-caption';
 const STEP_ATTACHMENT_SOURCE = 'step-attachment-source';
 
-class XMLValidationTest extends \PHPUnit_Framework_TestCase
+class XMLValidationTest extends TestCase
 {
     public function testGeneratedXMLIsValid()
     {
