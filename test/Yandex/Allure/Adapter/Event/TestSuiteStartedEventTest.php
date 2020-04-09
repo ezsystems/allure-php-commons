@@ -7,8 +7,9 @@ use Yandex\Allure\Adapter\Model\DescriptionType;
 use Yandex\Allure\Adapter\Model\Label;
 use Yandex\Allure\Adapter\Model\LabelType;
 use Yandex\Allure\Adapter\Model\TestSuite;
+use PHPUnit\Framework\TestCase;
 
-class TestSuiteStartedEventTest extends \PHPUnit_Framework_TestCase
+class TestSuiteStartedEventTest extends TestCase
 {
     public function testEvent()
     {

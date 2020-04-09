@@ -4,7 +4,6 @@ namespace Yandex\Allure\Adapter\Model;
 
 class Provider
 {
-
     /**
      * @var string
      */

@@ -19,8 +19,10 @@ class AnnotationProvider
     private static $indexedReader;
 
     /**
-     * Returns a list of class annotations
+     * Returns a list of class annotations.
+     *
      * @param $instance
+     *
      * @return array
      */
     public static function getClassAnnotations($instance)
@@ -31,9 +33,11 @@ class AnnotationProvider
     }
 
     /**
-     * Returns a list of method annotations
+     * Returns a list of method annotations.
+     *
      * @param $instance
      * @param $methodName
+     *
      * @return array
      */
     public static function getMethodAnnotations($instance, $methodName)
@@ -74,19 +78,20 @@ class AnnotationProvider
         AnnotationRegistry::registerAutoloadNamespace(
             'JMS\Serializer\Annotation',
             [
-                __DIR__ . "/../../../../../../../../vendor/jms/serializer/src",
-                __DIR__ . "/../../../../vendor/jms/serializer/src"
+                __DIR__ . '/../../../../../../../../vendor/jms/serializer/src',
+                __DIR__ . '/../../../../vendor/jms/serializer/src',
             ]
         );
 
         AnnotationRegistry::registerAutoloadNamespace(
             'Yandex\Allure\Adapter\Annotation',
-            __DIR__ . "/../../../../../src"
+            __DIR__ . '/../../../../../src'
         );
     }
 
     /**
-     * Allows to ignore framework-specific annotations
+     * Allows to ignore framework-specific annotations.
+     *
      * @param array $annotations
      */
     public static function addIgnoredAnnotations(array $annotations)

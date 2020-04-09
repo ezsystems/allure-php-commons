@@ -4,8 +4,9 @@ namespace Yandex\Allure\Adapter\Event;
 
 use Yandex\Allure\Adapter\Model\Status;
 use Yandex\Allure\Adapter\Model\Step;
+use PHPUnit\Framework\TestCase;
 
-class StepStartedEventTest extends \PHPUnit_Framework_TestCase
+class StepStartedEventTest extends TestCase
 {
     public function testEvent()
     {

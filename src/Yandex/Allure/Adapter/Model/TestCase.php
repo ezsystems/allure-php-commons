@@ -9,12 +9,10 @@ use JMS\Serializer\Annotation\XmlList;
 use JMS\Serializer\Annotation\XmlRoot;
 
 /**
- * @package Yandex\Allure\Adapter\Model
  * @XmlRoot("test-case")
  */
 class TestCase implements Entity
 {
-
     /**
      * @var int
      * @Type("integer")

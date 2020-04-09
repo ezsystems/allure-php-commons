@@ -91,7 +91,7 @@ class Allure
         } elseif ($event instanceof StepEvent) {
             $this->processStepEvent($event);
         } else {
-            throw new AllureException("Unknown event: " . get_class($event));
+            throw new AllureException('Unknown event: ' . get_class($event));
         }
         $this->lastEvent = $event;
     }
@@ -167,7 +167,7 @@ class Allure
         if ($testSuite->size() > 0) {
             $xml = $testSuite->serialize();
             $fileName = $testSuiteUuid . '-testsuite.xml';
-            $filePath = Provider::getOutputDirectory() . DIRECTORY_SEPARATOR . $fileName;
+            $filePath = Provider::getOutputDirectory() . \DIRECTORY_SEPARATOR . $fileName;
             file_put_contents($filePath, $xml);
         }
     }

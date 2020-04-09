@@ -4,8 +4,9 @@ namespace Yandex\Allure\Adapter\Event;
 
 use Yandex\Allure\Adapter\Model\Provider;
 use Yandex\Allure\Adapter\Model\Step;
+use PHPUnit\Framework\TestCase;
 
-class AddAttachmentEventTest extends \PHPUnit_Framework_TestCase
+class AddAttachmentEventTest extends TestCase
 {
     const ATTACHMENT_CAPTION = 'test-caption';
 
@@ -60,6 +61,18 @@ class AddAttachmentEventTest extends \PHPUnit_Framework_TestCase
         );
     }
 
+    /**
+     * @dataProvider emptyContentProvider
+     */
+    public function testEmptyAttachmentIsNotParsed($emptyContent)
+    {
+        $event = new AddAttachmentEvent($emptyContent, self::ATTACHMENT_CAPTION);
+        $step = new Step();
+        $event->process($step);
+
+        $this->assertEmpty($step->getAttachments());
+    }
+
     private function checkAttachmentIsCorrect(
         Step $step,
         $attachmentOutputPath,
@@ -80,5 +93,13 @@ class AddAttachmentEventTest extends \PHPUnit_Framework_TestCase
     private function getTestContents()
     {
         return str_shuffle('test-contents');
+    }
+
+    public function emptyContentProvider()
+    {
+        return [
+            [''],
+            [null],
+        ];
     }
 }

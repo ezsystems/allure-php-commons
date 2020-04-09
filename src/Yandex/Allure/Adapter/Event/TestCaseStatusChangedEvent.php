@@ -38,6 +38,7 @@ abstract class TestCaseStatusChangedEvent implements TestCaseEvent
 
     /**
      * @param string $message
+     *
      * @return $this
      */
     public function withMessage($message)
@@ -49,6 +50,7 @@ abstract class TestCaseStatusChangedEvent implements TestCaseEvent
 
     /**
      * @param \Exception $exception
+     *
      * @return $this
      */
     public function withException($exception)

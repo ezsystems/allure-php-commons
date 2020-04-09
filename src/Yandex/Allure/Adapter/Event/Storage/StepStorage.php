@@ -4,7 +4,7 @@ namespace Yandex\Allure\Adapter\Event\Storage;
 
 use Yandex\Allure\Adapter\Model\Status;
 use Yandex\Allure\Adapter\Model\Step;
-use \SplStack;
+use SplStack;
 use Yandex\Allure\Adapter\Support\Utils;
 
 class StepStorage
@@ -86,7 +86,7 @@ class StepStorage
         $step->setName(self::ROOT_STEP_NAME);
         $step->setTitle(
             "If you're seeing this then there's an error in step processing. "
-            . "Please send feedback to allure@yandex-team.ru. Thank you."
+            . 'Please send feedback to allure@yandex-team.ru. Thank you.'
         );
         $step->setStart(self::getTimestamp());
         $step->setStatus(Status::BROKEN);

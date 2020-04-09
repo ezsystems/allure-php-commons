@@ -5,8 +5,9 @@ namespace Yandex\Allure\Adapter\Event;
 use Yandex\Allure\Adapter\Model\Parameter;
 use Yandex\Allure\Adapter\Model\ParameterKind;
 use Yandex\Allure\Adapter\Model\TestCase;
+use PHPUnit\Framework\TestCase as PHPUnitTestCase;
 
-class AddParameterEventTest extends \PHPUnit_Framework_TestCase
+class AddParameterEventTest extends PHPUnitTestCase
 {
     public function testEvent()
     {

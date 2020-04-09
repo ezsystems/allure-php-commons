@@ -3,8 +3,7 @@
 namespace Yandex\Allure\Adapter\Model;
 
 /**
- * Step status
- * @package Yandex\Allure\Adapter\Model
+ * Step status.
  */
 final class Status
 {

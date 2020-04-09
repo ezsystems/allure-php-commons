@@ -3,8 +3,9 @@
 namespace Yandex\Allure\Adapter\Event\Storage;
 
 use Yandex\Allure\Adapter\Model\TestCase;
+use PHPUnit\Framework\TestCase as PHPUnitTestCase;
 
-class TestCaseStorageTest extends \PHPUnit_Framework_TestCase
+class TestCaseStorageTest extends PHPUnitTestCase
 {
     public function testLifecycle()
     {
