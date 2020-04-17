@@ -39,7 +39,7 @@ class AddAttachmentEvent implements StepEvent
     public function getAttachmentFileName($filePathOrContents, $type)
     {
         $filePath = $filePathOrContents;
-        if (!file_exists($filePath) || !is_file($filePath)) {
+        if (!@file_exists($filePath) || !@is_file($filePath)) {
             //Save contents to temporary file
             $filePath = tempnam(sys_get_temp_dir(), 'allure-attachment');
             if (!file_put_contents($filePath, $filePathOrContents)) {
